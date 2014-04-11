@@ -136,7 +136,7 @@ class AdsOptimal_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( basename( __DIR__ ), 'adsoptimal/admin/assets/css/admin.css' ), array(), AdsOptimal::VERSION );
+			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), AdsOptimal::VERSION );
 		}
 
 	}
@@ -160,7 +160,7 @@ class AdsOptimal_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( basename( __DIR__ ), 'adsoptimal/admin/assets/js/admin.js' ), array( 'jquery' ), AdsOptimal::VERSION );
+			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), AdsOptimal::VERSION );
 		}
 
 	}

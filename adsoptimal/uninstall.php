@@ -2,10 +2,10 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package   Plugin_Name
- * @author    Your Name <email@example.com>
+ * @package   AdsOptimal
+ * @author    team@adsoptimal.com
  * @license   GPL-2.0+
- * @link      http://example.com
+ * @link      http://www.adsoptimal.com
  * @copyright 2014 Your Name or Company Name
  */
 

@@ -1,6 +1,6 @@
 === Mobile Ad for Wordpress by AdsOptimal ===
 Contributors: baddth
-Author link: http://www.adsoptimal.com
+Donate link: http://www.adsoptimal.com
 Tags: ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
 Requires at least: 3.5.1
 Tested up to: 3.6

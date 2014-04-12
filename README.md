@@ -1,11 +1,17 @@
 # Mobile Ad for Wordpress by AdsOptimal #
-**Contributors:** baddth, jasukkas
-**Donate link:** http://www.adsoptimal.com
+
+**Contributors:** jasukkas, baddth
+
 **Tags:** ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
+
 **Requires at least:** 3.5.1
+
 **Tested up to:** 3.8
+
 **Stable tag**: 1.0.0
+
 **License:** GPLv2 or later
+
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description ##
@@ -22,7 +28,7 @@ Earn top dollar for your mobile web traffic! Promote mobile apps on your Wordpre
 - Take only minutes to install. See your revenue in real time.
 - Receive a payout via Paypal or Check.
 
-** Installation **
+## Installation ##
 
 1. Download this repository in zip file and add it to your Wordpress plugin
 2. Activate plugin

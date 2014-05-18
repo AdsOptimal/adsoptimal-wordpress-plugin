@@ -47,7 +47,7 @@
 </div>
 <div class="authenticated" style="display: none;">
 	<div style="background-color: #f05a28; min-width: 1050px;">
-		<img src="../wp-content/plugins/adsoptimal/admin/assets/white-logo.png" style="width: 170px; height: 50px; float: left;">
+		<img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/white-logo.png" style="width: 170px; height: 50px; float: left;">
 		<div class="btn-group pull-right" style="margin: 8px 10px 0 0;">
 			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="background: transparent; border-color: #ffffff; color: #ffffff; ">
 				<span class="email-address" style="text-shadow: none;"></span> <span class="caret"></span>
@@ -85,7 +85,7 @@
 									<div class="container-fluid">
 										<div class="col-md-4">
 											<button type="button" class="btn btn-success format-choice pre-selected active" onclick="refreshPreview(this);" format="ALERT" data-id="<%= current_user.id %>" data-type="ALERT" data-category="<%= current_user.category %>" category="" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-alert.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-alert.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$$$$</div>
 													<div>Friendliness: &#9733;&#9733;</div>
@@ -94,7 +94,7 @@
 										</div>
 										<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="BASIC" data-id="<%= current_user.id %>" data-type="BASIC" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-simple.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-simple.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$$$</div>
 													<div>Friendliness: &#9733;&#9733;&#9733;&#9733;</div>
@@ -103,7 +103,7 @@
 										</div>
 										<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="APPWALL" data-id="<%= current_user.id %>" data-type="APPWALL" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-appwall.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-appwall.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$$$</div>
 													<div>Friendliness: &#9733;&#9733;</div>
@@ -114,7 +114,7 @@
 									<div class="container-fluid" style="padding-top: 20px;">
 										<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="BOTTOMBAR" data-id="<%= current_user.id %>" data-type="BOTTOMBAR" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-banner.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-banner.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $</div>
 													<div>Friendliness: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
@@ -123,7 +123,7 @@
 										</div>
 										<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="POSTER" data-id="<%= current_user.id %>" data-type="POSTER" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-poster.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-poster.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$$</div>
 													<div>Friendliness: &#9733;&#9733;&#9733;</div>
@@ -132,7 +132,7 @@
 										</div>
 										<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="DETAIL" data-id="<%= current_user.id %>" data-type="DETAIL" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-detailed.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-detailed.jpg" style="width: 110px; height: 143px;"></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$</div>
 													<div>Friendliness: &#9733;&#9733;&#9733;</div>
@@ -153,7 +153,7 @@
 										</div>
 										<!--<div class="col-md-4">
 											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="EXIT" data-id="<%= current_user.id %>" data-type="EXIT" data-category="<%= current_user.category %>" style="padding: 0;">
-												<div style="padding: 6px; height: 100px; text-align: center; width: 122px;"><div style="display:none"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-alert.jpg" style="width: 110px; height: 143px"></div><h4>Exit<br/>Prompt</h4></div>
+												<div style="padding: 6px; height: 100px; text-align: center; width: 122px;"><div style="display:none"><img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/template-alert.jpg" style="width: 110px; height: 143px"></div><h4>Exit<br/>Prompt</h4></div>
 												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
 													<div>Payout: $$$$</div>
 													<div>Friendliness: &#9733;</div>
@@ -258,7 +258,7 @@
 				<div style="text-align: center;"><button type="submit" class="btn btn-danger btn-lg">Save Settings</button></div>
 			</div>
 			<div class="col-md-4">
-				<img src="../wp-content/plugins/adsoptimal/admin/assets/iphone_5_white.png" style="position: relative; width: 350px; height: 655px;">
+				<img src="../wp-content/plugins/adsoptimal-wordpress-plugin/admin/assets/iphone_5_white.png" style="position: relative; width: 350px; height: 655px;">
 				<div style="position: absolute; left: 56px; top: 163px; width: 266px; height: 331px;">
 					<img class="preview-screen" src="" style="width: 100%; height: 100%;">
 				</div>

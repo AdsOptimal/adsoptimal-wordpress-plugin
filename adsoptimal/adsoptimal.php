@@ -15,7 +15,7 @@
  * Plugin Name:       AdsOptimal - Mobile Ad
  * Plugin URI:        http://www.adsoptimal.com
  * Description:       EARN TOP DOLLAR FOR YOUR MOBILE WEB TRAFFIC! Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            team@adsoptimal.com
  * Author URI:        http://www.adsoptimal.com/company
  * Text Domain:       adsoptimal-locale
@@ -96,7 +96,7 @@ function adsoptimal_script_head() {
 	?>
 <script type='text/javascript'>
 (function(w) {
-w.MobileMonetizer={ID:'<?php echo get_option('adsoptimal_publisher_id', '') ?>',type:'<?php echo get_option('adsoptimal_ad_format', '') ?>',category:'0',display:'<?php echo get_option('adsoptimal_ad_timing', '') ?>',delay:<?php echo intval(get_option('adsoptimal_ad_delay', '10')) * 1000 ?>,scrollFraction:<?php echo intval(get_option('adsoptimal_ad_scroll', '60')) / 100.0 ?>};
+w.MobileMonetizer={ID:'<?php echo get_option('adsoptimal_publisher_id', '') ?>',type:'<?php echo get_option('adsoptimal_ad_format', '') ?>',category:'0',display:'<?php echo get_option('adsoptimal_ad_timing', '') ?>',delay:<?php echo intval(get_option('adsoptimal_ad_delay', '10')) * 1000 ?>,scrollFraction:<?php echo intval(get_option('adsoptimal_ad_scroll', '60')) / 100.0 ?>,label:'<?php echo get_option('adsoptimal_ad_label', 'YES') ?>',close:'<?php echo get_option('adsoptimal_ad_label', 'YES') ?>'};
 if(navigator.userAgent.match(/iPhone|iPod|iPad|Android/i)==null)return;
 var d=document,h=d.getElementsByTagName('head')[0],s=d.createElement('style'),j=d.createElement('script');
 s.setAttribute('rel','mw-page-block');s.innerHTML='body * {display:none}';

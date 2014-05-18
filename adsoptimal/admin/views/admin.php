@@ -18,15 +18,19 @@
 	if (isset($_POST["adsoptimal_ad_timing"])) update_option('adsoptimal_ad_timing', $_POST["adsoptimal_ad_timing"]);
 	if (isset($_POST["adsoptimal_ad_delay"])) update_option('adsoptimal_ad_delay', $_POST["adsoptimal_ad_delay"]);
 	if (isset($_POST["adsoptimal_ad_scroll"])) update_option('adsoptimal_ad_scroll', $_POST["adsoptimal_ad_scroll"]);
+	if (isset($_POST["adsoptimal_ad_close"])) update_option('adsoptimal_ad_close', $_POST["adsoptimal_ad_close"]);
+	if (isset($_POST["adsoptimal_ad_label"])) update_option('adsoptimal_ad_label', $_POST["adsoptimal_ad_label"]);
 ?>
 <form method="post" id="myForm">
 <input type="hidden" name="adsoptimal_access_token" value="<?php echo get_option('adsoptimal_access_token', '') ?>">
 <input type="hidden" name="adsoptimal_email" value="<?php echo get_option('adsoptimal_email', '') ?>">
 <input type="hidden" name="adsoptimal_publisher_id" value="<?php echo get_option('adsoptimal_publisher_id', '') ?>">
-<input type="hidden" name="_adsoptimal_ad_format" value="<?php echo get_option('adsoptimal_ad_format', 'POSTER') ?>">
-<input type="hidden" name="_adsoptimal_ad_timing" value="<?php echo get_option('adsoptimal_ad_timing', 'IMMEDIATE') ?>">
-<input type="hidden" name="_adsoptimal_ad_delay" value="<?php echo get_option('adsoptimal_ad_delay', '10') ?>">
-<input type="hidden" name="_adsoptimal_ad_scroll" value="<?php echo get_option('adsoptimal_ad_scroll', '60') ?>">
+<input type="hidden" name="adsoptimal_ad_format" value="<?php echo get_option('adsoptimal_ad_format', 'ALERT') ?>">
+<input type="hidden" name="adsoptimal_ad_timing" value="<?php echo get_option('adsoptimal_ad_timing', 'IMMEDIATE') ?>">
+<input type="hidden" name="adsoptimal_ad_delay" value="<?php echo get_option('adsoptimal_ad_delay', '10') ?>">
+<input type="hidden" name="adsoptimal_ad_scroll" value="<?php echo get_option('adsoptimal_ad_scroll', '60') ?>">
+<input type="hidden" name="adsoptimal_ad_close" value="<?php echo get_option('adsoptimal_ad_close', 'YES') ?>">
+<input type="hidden" name="adsoptimal_ad_label" value="<?php echo get_option('adsoptimal_ad_label', 'YES') ?>">
 <div class="authenticate" style="display: none;">
 	<div style="color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; border: solid 1px #ef4036; text-align: center; background-color: #f05a28; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
 		<h3 style="margin-top: 0px; font-weight: 300;">Connect Your AdsOptimal Account</h3>
@@ -42,7 +46,7 @@
 	</div>
 </div>
 <div class="authenticated" style="display: none;">
-	<div style="background-color: #f05a28; min-width: 800px;">
+	<div style="background-color: #f05a28; min-width: 1050px;">
 		<img src="../wp-content/plugins/adsoptimal/admin/assets/white-logo.png" style="width: 170px; height: 50px; float: left;">
 		<div class="btn-group pull-right" style="margin: 8px 10px 0 0;">
 			<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" style="background: transparent; border-color: #ffffff; color: #ffffff; ">
@@ -63,100 +67,204 @@
 		</div>
 		<div style="clear: both;"></div>
 	</div>
-	<table cellpadding="0" cellspacing="0" border="0" style="min-width: 800px;">
-		<tr>
-			<td style="vertical-align: top;">
-				<div style="float: left; width: 300px; height: 550px; background: url(../wp-content/plugins/adsoptimal/admin/assets/iphone_5_black.png) no-repeat center bottom; background-size: 300px 601px;">
-					<img id="preview" style="position: relative; left: 35px; top: 93px; width: 229px; height: 327px;" src="../wp-content/plugins/adsoptimal/admin/assets/template-poster.jpg">
-				</div>
-			</td>
-			<td style="vertical-align: top; text-align: center;">
-				<div style="padding: 15px; margin: 10px 0; background-color: #f6f6f6;">
-					<h4 style="margin-top: 0px; text-transform: uppercase;">Choose Ad Format</h4>
-					<div class="btn-group" data-toggle="buttons" style="display: block;">
-						<label class="btn template">
-							<input type="radio" name="adsoptimal_ad_format" value="POSTER"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-poster.jpg">
-						</label>
-						<label class="btn template">
-							<input type="radio" name="adsoptimal_ad_format" value="BOTTOMBAR"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-banner.jpg">
-						</label>
-						<label class="btn template">
-							<input type="radio" name="adsoptimal_ad_format" value="BASIC"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-simple.jpg">
-						</label>
-						<label class="btn template">
-							<input type="radio" name="adsoptimal_ad_format" value="DETAIL"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-detailed.jpg">
-						</label>
-						<label class="btn template">
-							<input type="radio" name="adsoptimal_ad_format" value="ALERT"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-alert.jpg">
-						</label>
-					</div>
-					<div style="clear: both;"></div>
-				</div>
-				<div style="padding: 15px; margin: 10px 0 0; background-color: #f6f6f6;">
-					<h4 style="margin: 0px; text-transform: uppercase;">Choose Display Ad Timing</h4>
-					<div style="padding: 20px 0 10px; text-align: center;">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-warning" onclick="$('.config-plane').hide();">
-								<input type="radio" name="adsoptimal_ad_timing" value="IMMEDIATE"><div style="font-weight:400; width:120px; line-height: 18px;">Immediately<br/>after page loaded</div>
-							</label>
-							<label class="btn btn-warning" onclick="$('.config-plane').hide(); $('.config-delay').show();">
-								<input type="radio" name="adsoptimal_ad_timing" value="DELAY"><div style="font-weight:400; width:120px; line-height: 18px;">Wait for seconds<br/>after page loaded</div>
-							</label>
-							<label class="btn btn-warning" onclick="$('.config-plane').hide(); $('.config-scroll').show();">
-								<input type="radio" name="adsoptimal_ad_timing" value="SCROLL"><div style="font-weight:400; width:150px; line-height: 18px;">After scroll to<br/>the bottom of the page</div>
-							</label>
+	<div style="width: 1050px; margin: 0 auto;">
+		<div class="container-fluid">
+			<div class="col-md-8">
+				<div class="feature-container" style="width: auto; height: 550px;">
+					<div class="container-fluid" style="padding-right: 0px;">
+						<div class="col-sm-3" style="border-right: solid 1px #dddddd; height: 550px; padding: 20px 10px 0 0;">
+							<ul class="nav nav-pills nav-stacked">
+								<li class="active setting-nav-pill" onclick="$('.setting-nav-pill').removeClass('active'); $('.setting-pane').hide(); $('.setting-pane-1').show(); $(this).addClass('active');"><a href="javascript:void(0);" style="padding-left: 10px; padding-right: 10px;">Choose Format</a></li>
+								<li class="setting-nav-pill" onclick="$('.setting-nav-pill').removeClass('active'); $('.setting-pane').hide(); $('.setting-pane-2').show(); $(this).addClass('active');"><a href="javascript:void(0);" style="padding-left: 10px; padding-right: 10px;">Choose Display Timing</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-9" style="height: 550px; padding: 0;">
+							<div class="setting-pane setting-pane-1">
+								<div style="height: 500px; overflow: auto;">
+									<h3 style="text-align: center;">Standard</h3>
+									<div class="container-fluid">
+										<div class="col-md-4">
+											<button type="button" class="btn btn-success format-choice pre-selected active" onclick="refreshPreview(this);" format="ALERT" data-id="<%= current_user.id %>" data-type="ALERT" data-category="<%= current_user.category %>" category="" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-alert.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$$$</div>
+													<div>Friendliness: &#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="BASIC" data-id="<%= current_user.id %>" data-type="BASIC" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-simple.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$$</div>
+													<div>Friendliness: &#9733;&#9733;&#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="APPWALL" data-id="<%= current_user.id %>" data-type="APPWALL" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-appwall.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$$</div>
+													<div>Friendliness: &#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+									</div>
+									<div class="container-fluid" style="padding-top: 20px;">
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="BOTTOMBAR" data-id="<%= current_user.id %>" data-type="BOTTOMBAR" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-banner.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $</div>
+													<div>Friendliness: &#9733;&#9733;&#9733;&#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="POSTER" data-id="<%= current_user.id %>" data-type="POSTER" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-poster.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$</div>
+													<div>Friendliness: &#9733;&#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="DETAIL" data-id="<%= current_user.id %>" data-type="DETAIL" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-detailed.jpg" style="width: 110px; height: 143px;"></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$</div>
+													<div>Friendliness: &#9733;&#9733;&#9733;</div>
+												</div>
+											</button>
+										</div>
+									</div>
+									<h3 style="text-align: center;">Advanced</h3>
+									<div class="container-fluid" style="padding-bottom: 10px;">
+										<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="REDIRECT" data-id="<%= current_user.id %>" data-type="REDIRECT" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px; height: 100px; text-align: center; width: 122px;"><h4>Redirect<br/>all users<br/>to offer</h4></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$$$$</div>
+													<div>Friendliness: &#9733;</div>
+												</div>
+											</button>
+										</div>
+										<!--<div class="col-md-4">
+											<button type="button" class="btn btn-default format-choice" onclick="refreshPreview(this);" format="EXIT" data-id="<%= current_user.id %>" data-type="EXIT" data-category="<%= current_user.category %>" style="padding: 0;">
+												<div style="padding: 6px; height: 100px; text-align: center; width: 122px;"><div style="display:none"><img src="../wp-content/plugins/adsoptimal/admin/assets/template-alert.jpg" style="width: 110px; height: 143px"></div><h4>Exit<br/>Prompt</h4></div>
+												<div style="padding: 6px; border-top: solid 1px #dddddd; font-size: 11px; line-height: 13px;">
+													<div>Payout: $$$$</div>
+													<div>Friendliness: &#9733;</div>
+												</div>
+											</button>
+										</div>-->
+									</div>
+								</div>
+								<div style="height: 50px; padding-top: 8px; border-top: solid 1px #dddddd; text-align: center;">
+									<span>Ad Label</span> <div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-success toggle toggle-a toggle-a1" onclick="$('.toggle-a').removeClass('btn-success btn-warning btn-default'); $(this).addClass('btn-success'); $('.toggle-a2').addClass(' btn-default'); refreshPreview($('.format-choice.active')[0]);">
+											<input type="radio" name="options" id="option1"> On
+										</label>
+										<label class="btn btn-default toggle toggle-a toggle-a2" onclick="$('.toggle-a').removeClass('btn-success btn-warning btn-default'); $(this).addClass('btn-warning'); $('.toggle-a1').addClass(' btn-default'); refreshPreview($('.format-choice.active')[0]);">
+											<input type="radio" name="options" id="option2"> Off
+										</label>
+									</div>
+									<span style="margin-left: 10px;">Extra Close Button</span> <div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-success toggle toggle-b toggle-b1" onclick="$('.toggle-b').removeClass('btn-success btn-warning btn-default'); $(this).addClass('btn-success'); $('.toggle-b2').addClass(' btn-default'); refreshPreview($('.format-choice.active')[0]);">
+											<input type="radio" name="options" id="option1"> On
+										</label>
+										<label class="btn btn-default toggle toggle-b toggle-b2" onclick="$('.toggle-b').removeClass('btn-success btn-warning btn-default'); $(this).addClass('btn-warning'); $('.toggle-b1').addClass(' btn-default'); refreshPreview($('.format-choice.active')[0]);">
+											<input type="radio" name="options" id="option2"> Off
+										</label>
+									</div>
+								</div>
+							</div>
+							<div class="setting-pane setting-pane-2" style="display: none;">
+								<h3 style="text-align: center;">Choose Ad Display Timing</h3>
+								<form class="form-horizontal">
+									<div style="padding: 13px;" class="container-fluid">
+										<div class="btn-group" data-toggle="buttons">
+											<label class="btn btn-success timing-toggle active" onclick="$('.timing-toggle').removeClass('btn-success btn-warning btn-default active').addClass('btn-default'); $(this).addClass('btn-success active').removeClass('btn-default'); $('.config-plane').hide(); refreshPreview($('.format-choice.active')[0]);" value="IMMEDIATE">
+												<input type="radio" name="options" id="option11"> Immediately<br/>after page loaded
+											</label>
+											<label class="btn btn-default timing-toggle" onclick="$('.timing-toggle').removeClass('btn-success btn-warning btn-default active').addClass('btn-default'); $(this).addClass('btn-success active').removeClass('btn-default'); $('.config-plane').hide(); $('.config-delay').show(); refreshPreview($('.format-choice.active')[0]);" value="DELAY">
+												<input type="radio" name="options" id="option12"> Wait for seconds<br/>after page loaded
+											</label>
+											<label class="btn btn-default timing-toggle" onclick="$('.timing-toggle').removeClass('btn-success btn-warning btn-default active').addClass('btn-default'); $(this).addClass('btn-success active').removeClass('btn-default'); $('.config-plane').hide(); $('.config-scroll').show(); refreshPreview($('.format-choice.active')[0]);" value="SCROLL">
+												<input type="radio" name="options" id="option13"> After scroll to<br/>the bottom of the page
+											</label>
+										</div>
+									</div>
+									<div class="config-delay config-plane" style="display: none;">
+										<h3 style="text-align: center;">Timing option</h3>
+										<div style="padding: 7px; text-align: center;" class="container-fluid">
+											<div class="form-group">
+												<label class="control-label" style="display: inline-block;">Delay ad for &nbsp;</label>
+												<div class="controls" style="width: 200px; display: inline-block;">
+													<select style="vertical-align:-webkit-baseline-middle" class="span4 config-delay-timing input-xlarge form-control" onchange="refreshPreview($('.format-choice.active')[0]);">
+														<option value="1">1 second</option>
+														<option value="2">2 seconds</option>
+														<option value="3">3 seconds</option>
+														<option value="4">4 seconds</option>
+														<option value="5">5 seconds</option>
+														<option value="6">6 seconds</option>
+														<option value="7">7 seconds</option>
+														<option value="8">8 seconds</option>
+														<option value="9">9 seconds</option>
+														<option value="10" selected>10 seconds</option>
+														<option value="11">11 seconds</option>
+														<option value="12">12 seconds</option>
+														<option value="13">13 seconds</option>
+														<option value="14">14 seconds</option>
+														<option value="15">15 seconds</option>
+														<option value="16">16 seconds</option>
+														<option value="17">17 seconds</option>
+														<option value="18">18 seconds</option>
+														<option value="19">19 seconds</option>
+														<option value="20">20 seconds</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="config-scroll config-plane" style="display: none;">
+										<h3 style="text-align: center;">Scroll option</h3>
+										<div style="padding: 7px; text-align: center;" class="container-fluid">
+											<div class="form-group">
+												<label class="control-label" style="display: inline-block;">Show ad after scrolling &nbsp;</label>
+												<div class="controls" style="width: 200px; display: inline-block;">
+													<select style="vertical-align:-webkit-baseline-middle" class="span4 config-scroll-threshold input-xlarge form-control" onchange="refreshPreview($('.format-choice.active')[0]);">
+														<option value="10">10%</option>
+														<option value="20">20%</option>
+														<option value="30">30%</option>
+														<option value="40">40%</option>
+														<option value="50">50%</option>
+														<option value="60" selected>60%</option>
+														<option value="70">70%</option>
+														<option value="80">80%</option>
+														<option value="90">90%</option>
+													</select>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="config-delay config-plane" style="padding: 0 15px 15px; margin: 0; display: none; background-color: #f6f6f6;">
-					<h4 style="margin: 0px; text-transform: uppercase;">Timing Option</h4>
-					<div style="padding: 13px;" class="row-fluid">
-						<div style="display:inline-block; line-height: 28px;">Delay ad for &nbsp;</div>
-						<select style="vertical-align:middle" class="span4 config-delay-timing" name="adsoptimal_ad_delay">
-							<option value="1">1 second</option>
-							<option value="2">2 seconds</option>
-							<option value="3">3 seconds</option>
-							<option value="4">4 seconds</option>
-							<option value="5">5 seconds</option>
-							<option value="6">6 seconds</option>
-							<option value="7">7 seconds</option>
-							<option value="8">8 seconds</option>
-							<option value="9">9 seconds</option>
-							<option value="10">10 seconds</option>
-							<option value="11">11 seconds</option>
-							<option value="12">12 seconds</option>
-							<option value="13">13 seconds</option>
-							<option value="14">14 seconds</option>
-							<option value="15">15 seconds</option>
-							<option value="16">16 seconds</option>
-							<option value="17">17 seconds</option>
-							<option value="18">18 seconds</option>
-							<option value="19">19 seconds</option>
-							<option value="20">20 seconds</option>
-						</select>
-					</div>
+				<div style="text-align: center;"><button type="submit" class="btn btn-danger btn-lg">Save Settings</button></div>
+			</div>
+			<div class="col-md-4">
+				<img src="../wp-content/plugins/adsoptimal/admin/assets/iphone_5_white.png" style="position: relative; width: 350px; height: 655px;">
+				<div style="position: absolute; left: 56px; top: 163px; width: 266px; height: 331px;">
+					<img class="preview-screen" src="" style="width: 100%; height: 100%;">
 				</div>
-				<div class="config-scroll config-plane" style="padding: 0 15px 15px; margin: 0; display: none; background-color: #f6f6f6;">
-					<h4 style="margin: 0px; text-transform: uppercase;">Scroll Option</h4>
-					<div style="padding: 13px;" class="row-fluid">
-						<div style="display:inline-block; line-height: 28px;">Show ad after scrolling &nbsp;</div>
-						<select style="vertical-align:middle" class="span4 config-scroll-threshold" name="adsoptimal_ad_scroll">
-							<option value="10">10%</option>
-							<option value="20">20%</option>
-							<option value="30">30%</option>
-							<option value="40">40%</option>
-							<option value="50">50%</option>
-							<option value="60">60%</option>
-							<option value="70">70%</option>
-							<option value="80">80%</option>
-							<option value="90">90%</option>
-						</select>
-					</div>
-				</div>
-				<div style="text-align: center; padding-top: 10px;"><button type="submit" class="btn btn-lg btn-danger">&nbsp; &nbsp; &nbsp; &nbsp; Save&nbsp; &nbsp; &nbsp; &nbsp; </button></div>
-			</td>
-		</tr>
-	</table>
+			</div>
+		</div>
+	</div>
 </div>
 </form>
 <script type="text/javascript" charset="utf-8">
@@ -233,11 +341,14 @@
 				
 				$('.email-address').text($('[name="adsoptimal_email"]').val());
 				
-				$('[name="adsoptimal_ad_format"][value="' + $('[name="_adsoptimal_ad_format"]').val() + '"]').parent().click();
-				$('[name="adsoptimal_ad_timing"][value="' + $('[name="_adsoptimal_ad_timing"]').val() + '"]').parent().click();
+				$('.format-choice[format="' + $('[name="adsoptimal_ad_format"]').val() + '"]').click();
+				$('.timing-toggle[value="' + $('[name="adsoptimal_ad_timing"]').val() + '"]').click();
+				$('.config-delay-timing').val($('[name="adsoptimal_ad_delay"]').val());
+				$('.config-scroll-threshold').val($('[name="adsoptimal_ad_scroll"]').val());
+				if ($('[name="adsoptimal_ad_label"]').val() == 'NO') $('.toggle-a2').click();
+				if ($('[name="adsoptimal_ad_close"]').val() == 'NO') $('.toggle-b2').click();
 				
-				$('[name="adsoptimal_ad_delay"]').val($('[name="_adsoptimal_ad_delay"]').val());
-				$('[name="adsoptimal_ad_scroll"]').val($('[name="_adsoptimal_ad_scroll"]').val());
+				window.disabledUpdateSettings = false;
 				
 				$('.earning').text('...');
 				if ($('[name="adsoptimal_access_token"]').val()) {
@@ -286,4 +397,58 @@
 			});
 		}
 	});
+</script>
+<script type="text/javascript">
+function refreshPreview(element) {
+  $('.format-choice').removeClass('active btn-success').addClass('btn-default');
+  $(element).addClass('active btn-success').removeClass('btn-default');
+  var type = $(element).attr('format');
+  var hasOption = false;
+  var hasPreview = false;
+  
+  switch(type) {
+    case 'ALERT':
+    case 'BOTTOMBAR':
+    case 'REDIRECT':
+    case 'EXIT':
+      hasOption = false;
+      $('.toggle').attr('disabled', true);
+      break;
+    default:
+      hasOption = true;
+      $('.toggle').attr('disabled', false);
+      break;
+  }
+  switch(type) {
+    case 'REDIRECT':
+      hasPreview = false;
+      break;
+    default:
+      hasPreview = true;
+      break;
+  }
+  
+  var imageType = '';
+  if (!$('.toggle-b1').hasClass('btn-success')) imageType += 'nc';
+  if (!$('.toggle-a1').hasClass('btn-success')) imageType += 'nl';
+  var imageSrc = $(element).find('img').attr('src');
+  if (imageType != '' && hasOption) imageSrc = imageSrc.replace('.jpg', '-' + imageType + '.png');
+  $('.preview-screen').attr('src', imageSrc);
+  
+  if (hasPreview) $('.preview-screen').show();
+  else $('.preview-screen').hide();
+	
+	updateSettings();
+}
+window.disabledUpdateSettings = true;
+function updateSettings() {
+	if (window.disabledUpdateSettings) return;
+	$('[name="adsoptimal_ad_format"]').val($('.format-choice.active').attr('format'));
+	$('[name="adsoptimal_ad_timing"]').val($('.timing-toggle.active').attr('value'));
+	$('[name="adsoptimal_ad_delay"]').val($('.config-delay-timing').val());
+	$('[name="adsoptimal_ad_scroll"]').val($('.config-scroll-threshold').val());
+	$('[name="adsoptimal_ad_label"]').val($('.toggle-a1').hasClass('btn-success') ? 'YES' : 'NO');
+	$('[name="adsoptimal_ad_close"]').val($('.toggle-b1').hasClass('btn-success') ? 'YES' : 'NO');
+}
+refreshPreview($('.pre-selected')[0]);
 </script>

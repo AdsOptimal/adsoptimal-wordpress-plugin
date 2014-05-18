@@ -137,6 +137,7 @@ class AdsOptimal_Admin {
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_style( $this->plugin_slug .'-admin-styles', plugins_url( 'assets/css/admin.css', __FILE__ ), array(), AdsOptimal::VERSION );
+			// wp_enqueue_style( $this->plugin_slug .'-admin-styles', 'http://localhost/~jasukkas/wordpress/wp-content/plugins/adsoptimal/admin/assets/css/admin.css?ver=1.0.0', array(), AdsOptimal::VERSION );
 		}
 
 	}
@@ -161,6 +162,7 @@ class AdsOptimal_Admin {
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
 			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), AdsOptimal::VERSION );
+			// wp_enqueue_script( $this->plugin_slug . '-admin-script', 'http://localhost/~jasukkas/wordpress/wp-content/plugins/adsoptimal/admin/assets/js/admin.js?ver=1.0.0', array( 'jquery' ), AdsOptimal::VERSION );
 		}
 
 	}

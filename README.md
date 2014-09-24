@@ -3,7 +3,7 @@
 **Tags:** ads, mobile ad, mobile ads, monetization, make money, iphone, android, mobile web
 **Requires at least:** 3.5.1
 **Tested up to:** 3.8
-**Stable tag**: 1.0.0
+**Stable tag**: 1.2
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@
 
 **Mobile Ad for Wordpress by AdsOptimal**
 
-Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $4 per download by just installing the plugin. The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
+Earn top dollar for your mobile web traffic! Promote mobile offers on your Wordpress site and get up to $15 RPM or $3 per download by just installing the plugin. The highest payout you'll find on the web. You don't need a mobile app or an optimized mobile experience to leverage mobile. Start by serving relevant ads to your mobile users with our solution. There's no risk to try!
 
 **Features**
 

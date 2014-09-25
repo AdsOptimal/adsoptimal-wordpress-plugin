@@ -26,14 +26,14 @@
 	<div style="color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; border: solid 1px #ef4036; text-align: center; background-color: #f05a28; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
 		<h3 style="margin-top: 0px; font-weight: 300;">Connect Your AdsOptimal Account</h3>
 		<p style="padding: 50px 0;"><a class="btn btn-default connect" href="javascript:void(0);" style="font-size: 15px; line-height: 40px; padding: 0 30px;">Connect AdsOptimal</a></p>
-		<p>Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web.</p>
+		<p>Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
 	</div>
 </div>
 <div class="authenticating" style="display: none;">
 	<div style="color: #ffffff; width: 350px; margin: 100px auto 0px; padding: 15px; border: solid 1px #ef4036; text-align: center; background-color: #f05a28; -webkit-border-radius: 7px; -moz-border-radius: 7px; border-radius: 7px;">
 		<h3 style="margin-top: 0px; font-weight: 300;">Connect Your AdsOptimal Account</h3>
 		<h4 style="padding: 50px 0; line-height: 42px;">Retrieving Your Account..</h4>
-		<p>Promote mobile apps on your website and get $3 per download, The highest payout you'll find on the web.</p>
+		<p>Promote mobile offers on your website and get $4 per download. The highest payout you'll find on the web.</p>
 	</div>
 </div>
 <div class="authenticated" style="display: none;">
